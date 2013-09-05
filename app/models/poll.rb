@@ -1,10 +1,10 @@
 class Poll < ActiveRecord::Base
-  attr_accessible :user_name, :title
+  attr_accessible :user_id, :title
 
-  validates :user_name :presence => true
+  validates :user_id, :presence => true
 
-  belongs_to (
-    :user,
+  belongs_to(
+    :author,
     class_name: 'User',
     foreign_key: :user_id,
     primary_key: :id
